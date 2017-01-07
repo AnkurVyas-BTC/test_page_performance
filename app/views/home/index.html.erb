@@ -11,9 +11,13 @@
         <% @images.each do |image_path| %>
         <div class="col-md-4">
             <a href="#" class="thumbnail">
-                <img src=<%= image_path %> alt="Load Test" style="height:300px">
+                <img class="lazy" src="http://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif" alt="Load Test" style="height:300px" data-original=<%= image_path %>>
             </a>
         </div>
         <%end%>
     </div>
 </div>
+
+<script type="text/javascript">
+  $("img.lazy").lazyload();
+</script>

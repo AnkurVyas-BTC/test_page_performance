@@ -2,11 +2,43 @@
     <div class="page-header">
         <h1>Page Load Time
             <small id='page_load'>
-              <img src="http://customize.org/images/lightbox/loading.gif?1391292812" />
+                <img src="http://customize.org/images/lightbox/loading.gif?1391292812"/>
             </small>
         </h1>
     </div>
-    <h2> This is our sample home page </h2>
+    <h2>
+        This is our sample home page
+    </h2>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <% @images.count.times do |index| %>
+            <li data-target="#myCarousel" data-slide-to="<%= index%>" class="<%=get_class(index)%>"></li>
+            <% end %>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <% @images.each_with_index do |image_path, index| %>
+            <div class="item <%=get_class(index)%>">
+                <img src=<%= image_path%> width="460" height="345">
+            </div>
+            <% end %>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="pad-b20"> </div>
     <div class="row">
         <% @images.each do |image_path| %>
         <div class="col-md-4">

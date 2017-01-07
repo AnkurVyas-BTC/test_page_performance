@@ -1,3 +1,4 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -14,3 +15,14 @@
  *= require_tree .
  *= require_self
  */
+
+.pad-b20{
+  padding-bottom: 20px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+    height: 500px;
+}

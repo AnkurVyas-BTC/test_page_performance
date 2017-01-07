@@ -1,5 +1,19 @@
 class HomeController < ApplicationController
+  before_filter :load_images
   def index
+  end
+
+  def index_lazy
+    render layout: 'application_lazy'
+  end
+
+  def index_pil
+    render layout: 'application_pil'
+  end
+
+  private
+
+  def load_images
     @images = [
       'https://cdn4.geckoandfly.com/wp-content/uploads/2014/03/motivation-motivational-quotes-poster-wallpaper5.jpg',
       'https://s-media-cache-ak0.pinimg.com/originals/1a/99/49/1a994928afa7866db6782dae8060708f.jpg',

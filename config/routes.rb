@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
+  get 'index_lazy' => 'home#index_lazy'
+  get 'index_pil' => 'home#index_pil'
   root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

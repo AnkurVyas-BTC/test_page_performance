@@ -1,7 +1,7 @@
 <div class="container">
   <%= render 'page_header'%>
   <h2>
-    Sample home page.
+    Sample home page - With Progressive Image Loading
   </h2>
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -16,7 +16,10 @@
     <div class="carousel-inner" role="listbox">
       <% @images.each_with_index do |image_path, index| %>
       <div class="item <%=get_class(index)%>">
-        <img src=<%= image_path%>>
+        <div class="placeholder" data-large="<%= image_path %>">
+          <img src="https://cdn-images-1.medium.com/freeze/max/27/1*sg-uLNm73whmdOgKlrQdZA.jpeg?q=20" class="img-small">
+          <div style="padding-bottom: 56.6%;"></div>
+        </div>
       </div>
       <% end %>
     </div>
@@ -37,9 +40,11 @@
     <% @images.each do |image_path| %>
     <div class="col-md-4">
       <a href="#" class="thumbnail">
-        <img src=<%= image_path%> alt="Load Test" style="height:300px">
+        <div class="placeholder" data-large="<%= image_path %>">
+          <img src="https://cdn-images-1.medium.com/freeze/max/27/1*sg-uLNm73whmdOgKlrQdZA.jpeg?q=20" class="img-small">
+          <div style="padding-bottom: 56.6%;"></div>
+        </div>
       </a>
     </div>
     <%end%>
   </div>
-</div>

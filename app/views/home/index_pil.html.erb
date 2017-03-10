@@ -13,7 +13,7 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox" data-image='one'>
       <% @images.each_with_index do |image_path, index| %>
       <div class="item <%=get_class(index)%>">
         <div class="placeholder" data-large="<%= image_path %>">
